@@ -5,9 +5,10 @@
     <style>
         /* Scary font and full red background */
         @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+        
         body {
-            background-color: red; /* Red background */
-            color: black; /* Black text */
+            background-color: #8B0000; /* Dark red background for more ominous effect */
+            color: white; /* White text for contrast */
             font-family: 'Creepster', cursive; /* Scary font */
             margin: 0;
             padding: 0;
@@ -15,7 +16,25 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            height: 100vh;
+            animation: backgroundFlicker 0.5s infinite alternate; /* Background flickering */
         }
+
+        /* Flickering effect on the text */
+        @keyframes textFlicker {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        @keyframes backgroundFlicker {
+            0% { background-color: #8B0000; }
+            25% { background-color: #A52A2A; }
+            50% { background-color: #800000; }
+            75% { background-color: #8B0000; }
+            100% { background-color: #A52A2A; }
+        }
+
         .text-container {
             font-size: 36px; /* Adjust size to fit more text */
             text-align: center;
@@ -27,22 +46,23 @@
             grid-gap: 10px;
             justify-items: center;
             align-items: center;
+            animation: textFlicker 0.1s infinite alternate; /* Flicker effect on the text */
         }
+
         .text {
             margin: 5px;
+            color: white;
+            animation: textFlicker 0.15s infinite alternate;
+        }
+
+        /* Make the text look like it's slightly shaking */
+        .text:nth-child(odd) {
+            animation: textFlicker 0.2s infinite alternate;
         }
     </style>
 </head>
 <body>
     <div class="text-container">
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
         <div class="text">Sike! This is Fake!</div>
         <div class="text">Sike! This is Fake!</div>
         <div class="text">Sike! This is Fake!</div>
