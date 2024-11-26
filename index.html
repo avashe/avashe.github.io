@@ -1,115 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>LOL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horror Message</title>
     <style>
-        /* Scary font and full red background */
-        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Noto+Sans+JP:wght@500&display=swap');
+
         body {
-            background-color: #8B0000; /* Dark red background for more ominous effect */
-            color: white; /* White text for contrast */
-            font-family: 'Creepster', cursive; /* Scary font */
             margin: 0;
             padding: 0;
+            background: black; /* Dark background */
+            font-family: 'Creepster', cursive;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
             height: 100vh;
-            animation: backgroundFlicker 0.5s infinite alternate; /* Background flickering */
+            overflow: hidden;
         }
 
-        /* Flickering effect on the text */
-        @keyframes textFlicker {
-            0% { opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
-        }
-
-        @keyframes backgroundFlicker {
-            0% { background-color: #8B0000; }
-            25% { background-color: #A52A2A; }
-            50% { background-color: #800000; }
-            75% { background-color: #8B0000; }
-            100% { background-color: #A52A2A; }
-        }
-
-        .text-container {
-            font-size: 36px; /* Adjust size to fit more text */
-            text-align: center;
-            line-height: 1.5; /* Adjust spacing */
-            width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5 columns */
-            grid-gap: 10px;
-            justify-items: center;
+        .container {
+            width: 90%;
+            max-width: 800px;
+            height: 400px;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKXB1e8io8C_SdJbaTxl_zfX8F2Rw5gNAofg&s') center center no-repeat;
+            background-size: cover;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+            border: 2px solid #660000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            animation: textFlicker 0.1s infinite alternate; /* Flicker effect on the text */
+            padding: 20px;
+            position: relative;
         }
 
         .text {
-            margin: 5px;
-            color: white;
-            animation: textFlicker 0.15s infinite alternate;
+            text-align: center;
+            color: #880000; /* Blood red for both texts */
+            text-shadow: 2px 2px 5px black;
+            font-family: 'Noto Sans JP', sans-serif; /* Japanese-compatible font */
+            position: relative;
         }
 
-        /* Make the text look like it's slightly shaking */
-        .text:nth-child(odd) {
-            animation: textFlicker 0.2s infinite alternate;
+        .japanese {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .english {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Glitch effect */
+        .text::before,
+        .text::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            text-shadow: -2px 0 red;
+            clip: rect(0, 100%, 0, 0);
+            animation: glitch 2s infinite ease-in-out;
+        }
+
+        .text::after {
+            text-shadow: 2px 0 blue;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes glitch {
+            0% {
+                clip: rect(0, 100%, 20%, 0);
+            }
+            10% {
+                clip: rect(10%, 100%, 40%, 0);
+                transform: translate(-2px, -2px);
+            }
+            20% {
+                clip: rect(5%, 100%, 30%, 0);
+                transform: translate(2px, 2px);
+            }
+            30% {
+                clip: rect(15%, 100%, 40%, 0);
+                transform: translate(-1px, 1px);
+            }
+            40% {
+                clip: rect(5%, 100%, 20%, 0);
+                transform: translate(1px, -1px);
+            }
+            50% {
+                clip: rect(10%, 100%, 30%, 0);
+                transform: translate(0, 0);
+            }
+            100% {
+                clip: rect(0, 100%, 20%, 0);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="text-container">
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
-        <div class="text">Sike! This is Fake!</div>
+    <div class="container">
+        <div class="text" data-text="サイトは偽物です。引っかかったね！">
+            <div class="japanese">
+                サイトは偽物です。引っかかったね！<br>
+                でも、本当に気をつけてください—リンクやQRコードがどこに導くかわからないことが多いです。<br>
+                時には、好奇心が思いがけない場所に導くこともあります…<br>
+                タブを閉じた後でも心に残り、あなたを悩ませ続ける場所に。
+            </div>
+        </div>
+        <div class="text english" data-text="Sike! This site is fake. Got ya!">
+            Sike! This site is fake. Got ya!<br>
+            But seriously, beware—stay vigilant and media-aware.<br>
+            You never really know where a link or QR code might take you.<br>
+            Sometimes, curiosity leads to places you wish you'd never found... places that linger in your mind, haunting you long after you've closed the tab.
+        </div>
     </div>
 </body>
 </html>
